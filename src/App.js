@@ -1,22 +1,29 @@
-import './styles/App.css'
+import React from 'react';
+import { useThemeMode } from './hooks/useThemeMode';
+import { Button, Box } from '@mui/material';
 
 function App() {
+  const { isDarkMode, toggleTheme } = useThemeMode();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box
+      sx={{
+        textAlign: 'center',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'background.default',
+        color: 'text.primary',
+        transition: 'background-color 0.3s, color 0.3s',
+      }}
+    >
+      <Button variant="contained" onClick={toggleTheme}>
+        Переключить тему
+      </Button>
+      <p>Текущая тема: {isDarkMode ? 'Тёмная' : 'Светлая'}</p>
+    </Box>
   );
 }
 
