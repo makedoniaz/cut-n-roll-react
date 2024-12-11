@@ -1,10 +1,8 @@
 import React from 'react';
-import { useThemeMode } from './hooks/useThemeMode';
-import { Button, Box } from '@mui/material';
+import { Box } from '@mui/material';
+import { Navbar } from './components/layout/Navbar'
 
 function App() {
-  const { isDarkMode, toggleTheme } = useThemeMode();
-
   return (
     <Box
       sx={{
@@ -19,10 +17,7 @@ function App() {
         transition: 'background-color 0.3s, color 0.3s',
       }}
     >
-      <Button variant="contained" onClick={toggleTheme}>
-        Переключить тему
-      </Button>
-      <p>Текущая тема: {isDarkMode ? 'Тёмная' : 'Светлая'}</p>
+      <Navbar />
     </Box>
   );
 }
