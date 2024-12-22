@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { Navbar } from './components/layout/Navbar'
+import { Footer } from './components/layout/Footer'
+import { HorizontalContentList } from './components/Lists/HorizontalContentList';
 
 function App() {
   return (
@@ -18,6 +20,12 @@ function App() {
       }}
     >
       <Navbar />
+        <Box
+          sx={{
+            maxWidth: 900,
+          }}>
+          {/* <HorizontalContentList /> */}
+        </Box>
     </Box>
   );
 }

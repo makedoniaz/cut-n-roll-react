@@ -12,7 +12,11 @@ const MobileNavbar = ({ pages, appName }) => {
 
   return (
     <Toolbar>
-        <IconButton edge="start" color="inherit" onClick={toggleDrawer(true)}>
+        <IconButton sx={{
+          color: 'inherit',
+          width: 60,
+          height: 36
+        }} edge="start" onClick={toggleDrawer(true)}>
           <MenuIcon />
         </IconButton>
 
